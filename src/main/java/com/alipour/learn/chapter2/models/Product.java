@@ -1,4 +1,4 @@
-package com.alipour.learn.models;
+package com.alipour.learn.chapter2.models;
 
 import lombok.Getter;
 import lombok.Setter;

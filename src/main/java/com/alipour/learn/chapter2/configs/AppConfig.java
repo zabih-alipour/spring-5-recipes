@@ -1,9 +1,9 @@
-package com.alipour.learn.configs;
+package com.alipour.learn.chapter2.configs;
 
-import com.alipour.learn.models.BannerLoader;
-import com.alipour.learn.models.Battery;
-import com.alipour.learn.models.Disc;
-import com.alipour.learn.models.Product;
+import com.alipour.learn.chapter2.models.BannerLoader;
+import com.alipour.learn.chapter2.models.Battery;
+import com.alipour.learn.chapter2.models.Disc;
+import com.alipour.learn.chapter2.models.Product;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -13,10 +13,6 @@ import org.springframework.core.io.Resource;
 @Configuration
 @ComponentScan(basePackages = "com.alipour.learn")
 public class AppConfig {
-
-    @Value("classpath:banner.txt")
-    private Resource banner;
-
     @Bean
     public Product aaa() {
         Battery p1 = new Battery("AAA", 2.5);
@@ -38,8 +34,9 @@ public class AppConfig {
         return p2;
     }
 
+    //--- This bean is only for print a custom banner on output
     @Bean
-    public BannerLoader banner() {
+    public BannerLoader banner(@Value("classpath:banner.txt") Resource banner) {
         BannerLoader bannerLoader = new BannerLoader();
         bannerLoader.setBanner(banner);
         return bannerLoader;
