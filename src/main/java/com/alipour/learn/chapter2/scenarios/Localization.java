@@ -11,8 +11,6 @@ public class Localization extends LearningSubjectExecutor {
 
     @Override
     protected void run() {
-        System.out.println("\n\n######################## Check Localization ########################");
-
         System.out.println("Message picked from us file: " + context.getMessage("alert.checkout", null, Locale.US));
         System.out.println("Message picked from fa file: " + context.getMessage("alert.checkout", null, new Locale("fa", "IR")));
 
