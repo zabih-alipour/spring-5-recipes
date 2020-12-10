@@ -1,7 +1,5 @@
-package com.alipour.learn.chapter2.senarios;
+package com.alipour.learn.chapter2.scenarios;
 
-import com.alipour.learn.chapter2.components.ShoppingCard;
-import com.alipour.learn.chapter2.models.Product;
 import org.springframework.context.ApplicationContext;
 
 import java.util.Locale;

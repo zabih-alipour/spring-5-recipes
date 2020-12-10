@@ -1,4 +1,4 @@
-package com.alipour.learn.chapter2.senarios;
+package com.alipour.learn.chapter2.scenarios;
 
 
 import org.springframework.context.ApplicationContext;
