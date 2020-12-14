@@ -63,4 +63,18 @@ public class CalculatorLoggingAspect {
         }
         return result;
     }
+
+    //--- Add sum dynamic method to a class without implement an interface or extend a class
+    @DeclareParents(
+            value = "com.alipour.learn.chapter2.models.aop.ArithmeticCalculatorImpl",
+            defaultImpl = MaxCalculatorImpl.class
+    )
+    public MaxCalculator maxCalculator;
+
+    @DeclareParents(
+            value = "com.alipour.learn.chapter2.models.aop.ArithmeticCalculatorImpl",
+            defaultImpl = MinCalculatorImpl.class
+    )
+    public MinCalculator minCalculator;
+
 }
