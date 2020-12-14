@@ -64,7 +64,7 @@ public class CalculatorLoggingAspect {
         return result;
     }
 
-    //--- Add sum dynamic method to a class without implement an interface or extend a class
+    //--- Dynamic implementation or extend
     @DeclareParents(
             value = "com.alipour.learn.chapter2.models.aop.ArithmeticCalculatorImpl",
             defaultImpl = MaxCalculatorImpl.class
@@ -76,5 +76,17 @@ public class CalculatorLoggingAspect {
             defaultImpl = MinCalculatorImpl.class
     )
     public MinCalculator minCalculator;
+
+    //--- Introduce States to Your POJOs with AOP
+    @DeclareParents(
+            value = "com.alipour.learn.chapter2.models.aop.*CalculatorImpl",
+            defaultImpl = CounterImpl.class
+    )
+    public Counter counter;
+
+    @After(value = "execution(* com.alipour.learn.chapter2.models.aop.*Calculator.*(..)) && this(counter)", argNames = "counter")
+    public void increaseCount(Counter counter) {
+        counter.increase();
+    }
 
 }
