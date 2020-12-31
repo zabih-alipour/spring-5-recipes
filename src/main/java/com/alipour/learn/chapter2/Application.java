@@ -7,6 +7,7 @@ import com.alipour.learn.chapter2.scenarios.BeanScope;
 import com.alipour.learn.chapter2.scenarios.Localization;
 import com.alipour.learn.chapter2.scenarios.aop.AOPScenario;
 import com.alipour.learn.chapter2.scenarios.aop.AspectJScenario;
+import com.alipour.learn.chapter2.scenarios.aop.DomainInjectionScenario;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Application {
@@ -16,6 +17,7 @@ public class Application {
         new Localization(context).execute();
         new BeanPostProcessorScenario(context).execute();
         new AOPScenario(context).execute();
+        new DomainInjectionScenario(context).execute();
         new AspectJScenario(context).execute();
     }
 }
