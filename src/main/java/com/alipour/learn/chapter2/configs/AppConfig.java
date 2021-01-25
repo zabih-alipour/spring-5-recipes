@@ -5,14 +5,17 @@ import com.alipour.learn.chapter2.models.Battery;
 import com.alipour.learn.chapter2.models.Disc;
 import com.alipour.learn.chapter2.models.Product;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.annotation.aspectj.EnableSpringConfigured;
 import org.springframework.core.io.Resource;
 
 @Configuration
 @EnableAspectJAutoProxy
+@EnableSpringConfigured
 @ComponentScan(basePackages = "com.alipour.learn")
 public class AppConfig {
     @Bean
